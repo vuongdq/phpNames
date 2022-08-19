@@ -9,4 +9,7 @@ foreach ($pageNums as $pagenum){
     $pageResultNum = $domain.$pagenum->find("a",0)->href;
     echo $pageResultNum;
     echo "<br />";
+    $html2 = file_get_html($pageResultNum);
+    $nameLink = $html2->find("table.table",0)->find("tbody",0)->find("tr");
+    var_dump($nameLink);
 }
